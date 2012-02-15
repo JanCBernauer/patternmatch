@@ -29,24 +29,21 @@ vector<entry>entries;
 void writekey(int lv,patType pat)
 {
   int pos;
-  cout<<"In Writekey level "<<lv<<endl;
   if (lv==0)
     {
-      for (int i=0;i<tree[0][pat].size();i++)
-	{
-	  entry e;
-	  e.pattern=pat;
-	  e.skipto=entries.size();
-	  entries.push_back(e);
-	}
-      entries[entries.size()-1].skipto=0;
+      entry e;
+      e.pattern=tree[0][pat][0];
+      //      e.level=0;
+      e.skipto=0;
+      cout<<"Writing "<<e.pattern<<" "<<e.skipto<<endl;
+      entries.push_back(e);
       return;
     }
-  cout<<"At level "<<lv<<" will go through "<<tree[lv][pat].size()<<endl;
   for (int i=0;i<tree[lv][pat].size();i++)
     {
       entry e;
       e.pattern=tree[lv][pat][i];
+      //      e.level=lv;
       entries.push_back(e);
       pos=entries.size()-1;
       writekey(lv-1,e.pattern);
