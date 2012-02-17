@@ -25,9 +25,11 @@ INCLUDE_DIRECTORIES(${INCLUDES})
 SET(LIBRARY_OUTPUT_PATH "${CMAKE_BINARY_DIR}/lib")
 SET(EXECUTABLE_OUTPUT_PATH "${CMAKE_BINARY_DIR}/bin")
 
-add_executable(PatternPacker PatternPacker.cc )
-add_executable(PatternCheck PatternCheck.cc )
+add_executable(PatternPackerULL PatternPackerULL.cc )
+add_executable(PatternCheckULL PatternCheckULL.cc )
+add_executable(PatternPackerBS70 PatternPackerBS70.cc )
+add_executable(PatternCheckBS70 PatternCheckBS70.cc )
 
-TARGET_LINK_LIBRARIES(${Boost_LIBRARIES})
+
 
 

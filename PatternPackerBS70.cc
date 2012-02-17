@@ -4,23 +4,39 @@
 #include<map>
 #include <cmath>
 #include<fstream>
+#include<bitset>
 using namespace std;
 
 
-#define levels 6
+#define levels 8 //outer
 
 // this program reads a list of these
-typedef  unsigned int patType;
+
+typedef  bitset<70> patType; //for outer
 
 // and compiles a pattern
 
 typedef TreeSearch<patType,levels>::entry entry;
 
 
+// use this for bitsets
+struct BitsetLessThan
+    : public std::binary_function<patType, patType, bool>
+{
+    bool operator() (patType const& n1, patType const& n2) const
+    {
+      for (int i=0;i<n1.size();i++)
+	{
+	  if (n1[i]<n2[i]) return true;
+	  if (n1[i]>n2[i]) return false;
+	}
+      return false;
+    }
+};
 
 
 
-map<patType,vector<patType> > tree[levels];
+map<patType,vector<patType>,BitsetLessThan > tree[levels];// outer
 
 patType masks[levels];
 
@@ -59,6 +75,8 @@ int main()
   while (cin.good())
     {
       cin>>hex>> pat;
+      if (!cin.good()) break;
+      cout<<pat<<endl;
       tree[0][pat].push_back(pat);
     }
 
