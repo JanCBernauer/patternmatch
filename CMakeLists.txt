@@ -28,6 +28,6 @@ SET(EXECUTABLE_OUTPUT_PATH "${CMAKE_BINARY_DIR}/bin")
 add_executable(PatternPacker PatternPacker.cc )
 add_executable(PatternCheck PatternCheck.cc )
 
-TARGET_LINK_LIBRARIES(${Boost_LIBRARIES})
+TARGET_LINK_LIBRARIES(PatternPacker ${Boost_LIBRARIES})
 
 
