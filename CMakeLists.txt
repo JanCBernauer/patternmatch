@@ -19,6 +19,3 @@ add_executable(PatternPackerULL PatternPackerULL.cc )
 add_executable(PatternCheckULL PatternCheckULL.cc )
 add_executable(PatternPackerBS70 PatternPackerBS70.cc )
 add_executable(PatternCheckBS70 PatternCheckBS70.cc )
-
-
-
