@@ -76,7 +76,7 @@ int main()
     {
       cin>>hex>> pat;
       if (!cin.good()) break;
-      cout<<pat<<endl;
+      cout<<pat<< " end"<<endl;
       tree[0][pat].push_back(pat);
     }
 
