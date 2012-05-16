@@ -70,6 +70,7 @@ void writekey(int lv,patType pat)
 
 int main()
 {
+
   patType pat;
   // first, read all patterns (HEX CODE!)
   while (cin.good())
