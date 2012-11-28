@@ -20,7 +20,7 @@ int main (int argc , char **argv)
       cout<<ts.hasMatch(pat)<<endl;
       ts.enumerateMatches(pat);
       cout<<ts.matches.size()<<std::endl;
-      for (int i=0; i<ts.matches.size();i++)
+      for (unsigned int i=0; i<ts.matches.size();i++)
       	cout<< *ts.matches[i]<<std::endl;
 
       //      for (int i=0;i<100000;i++)
