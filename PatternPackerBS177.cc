@@ -25,7 +25,7 @@ struct BitsetLessThan
 {
     bool operator() (patType const& n1, patType const& n2) const
     {
-      for (int i=0;i<n1.size();i++)
+      for (unsigned int i=0;i<n1.size();i++)
 	{
 	  if (n1[i]<n2[i]) return true;
 	  if (n1[i]>n2[i]) return false;
@@ -55,7 +55,7 @@ void writekey(int lv,patType pat)
       entries.push_back(e);
       return;
     }
-  for (int i=0;i<tree[lv][pat].size();i++)
+  for (unsigned int i=0;i<tree[lv][pat].size();i++)
     {
       entry e;
       e.pattern=tree[lv][pat][i];
@@ -110,12 +110,12 @@ int main()
   cout<<"Starting writekey"<<endl;
   writekey(levels-1,1);
   cout<<dec<<endl;
-  for (int i=0;i<entries.size();i++)
+  for (unsigned int i=0;i<entries.size();i++)
     cout<<i<< " "<<hex<<entries[i].pattern<<dec<<" "<<entries[i].skipto<<endl;
   //dumping 
   ofstream off("pattern.dat");
 
-  for (int i=0;i<entries.size();i++)
+  for (unsigned int i=0;i<entries.size();i++)
     off.write((const char *)&entries[i],sizeof(entry));
   off.close();
   
