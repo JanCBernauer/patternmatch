@@ -8,7 +8,7 @@ ENDIF(COMMAND cmake_policy)
 # Set project name
 PROJECT(TreeSearch)
 
-SET(INCLUDES  ${Boost_INCLUDE_DIRS} "${CMAKE_CURRENT_SOURCE_DIR}/include" "${CMAKE_SOURCE_DIR}/include")
+SET(INCLUDES  "${CMAKE_CURRENT_SOURCE_DIR}")
 INCLUDE_DIRECTORIES(${INCLUDES})
 
 # Set output path for libraries and executables within build directory (makes linking easier...)
